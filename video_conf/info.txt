@@ -1,6 +1,9 @@
 Flask Installation:
 - http://flask.pocoo.org/docs/0.10/installation/
 
+Opentok-sdk-installation:
+- http://www.tokbox.com/blog/building-a-simple-chatroom-with-flask-and-opentok/
+
 
 Reference URL:
 - https://dashboard.tokbox.com/quickstart#6
