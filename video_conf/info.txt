@@ -1,0 +1,5 @@
+Reference URL:
+
+https://dashboard.tokbox.com/quickstart#6
+
+http://www.tokbox.com/blog/getting-started-with-opentok-from-0-to-simple-group-video-chat/
