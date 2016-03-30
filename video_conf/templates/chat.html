@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+        
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src='//static.opentok.com/v2/js/opentok.min.js'></script>
+    <script> 
+    	$(document).ready(function(){
+          	$("#link").attr('value',document.URL);
+        });
+        
+	  	var apiKey = '{{api_key}}';
+	  	var sessionId = '{{session_id}}';
+	  	var token = '{{token}}';
+  
+  		var session = OT.initSession(apiKey, sessionId); 
+  		session.on({ 
+	      	streamCreated: function(event) { 
+	        	session.subscribe(event.stream, 'subscribersDiv', {insertMode: 'append'}); 
+      		} 
+  		}); 
+  		session.connect(token, function(error) {
+	    	if (error) {
+	      		console.log(error.message);
+	    	} else {
+	      		session.publish('myPublisherDiv', {width: 320, height: 240}); 
+	    	}
+  		});
+    </script>
+    </head>
+    <body>
+    	<h1 style= "text-align: center">OpenTok Flask Demo Chatroom</h1>
+      	Share this chatroom!
+      	<input style= "width: 150px;"  id= "link" type= "text" readonly= "readonly" value= "" />
+      	<div id='myPublisherDiv'></div> 
+    	<div id='subscribersDiv'></div> 
+    </body>
+</html>
